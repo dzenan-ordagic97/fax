@@ -1,0 +1,74 @@
+﻿@model CasEditVM
+@{
+    ViewData["Title"] = "EditPV";
+}
+
+<style>
+    .Prisutan {
+        background-color: forestgreen;
+        color: white;
+    }
+
+    .Odsutan {
+        background-color: red;
+        color: white;
+    }
+</style>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Bodovi</th>
+            <th>Prisutan</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.odrzaniCasDetalji)
+        {
+            <tr>
+                <td>@item.StudentIme</td>
+                <td>
+                    @if (item.Prisutan)
+                    {
+                        <span>@item.Bodovi</span>
+                    }
+                    else
+                    {
+                        <span>/</span>
+                    }
+                </td>
+                <td>
+                    <a ajax-poziv="da" href="/Cas/Prisustvo?id=@item.OdrzaniCasDetaljiID" ajax-rezultat="divTabela">
+
+                        @if (item.Prisutan)
+                        {
+                            <span class="@item.PrisutanString">
+                                @item.PrisutanString
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="@item.PrisutanString">
+                                @item.PrisutanString
+                            </span>
+                        }
+                    </a>
+
+                </td>
+                <td>
+                    @if (item.Prisutan)
+                    {
+                        <a class="btn btn-danger" ajax-poziv="da" href="/Cas/UpdateBodova?id=@item.OdrzaniCasDetaljiID" ajax-rezultat="divTabela">
+                            Uredi
+                        </a>
+                    }
+                    else
+                    {
+                        <span>/</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

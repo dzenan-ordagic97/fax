@@ -1,0 +1,28 @@
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.deps.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.runtimeconfig.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.runtimeconfig.dev.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.dll
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.pdb
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.csprojAssemblyReference.cache
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.AssemblyInfoInputs.cache
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.AssemblyInfo.cs
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.dll
+C:\Users\dzena\Desktop\RS1-Workshop\New folder\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.pdb
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.deps.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.runtimeconfig.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.runtimeconfig.dev.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.dll
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\bin\Debug\netcoreapp2.0\Ispit_2017_02_15.pdb
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.csprojAssemblyReference.cache
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.AssemblyInfoInputs.cache
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.AssemblyInfo.cs
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.dll
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2017_15_02\Ispit_2017_02_15\obj\Debug\netcoreapp2.0\Ispit_2017_02_15.pdb

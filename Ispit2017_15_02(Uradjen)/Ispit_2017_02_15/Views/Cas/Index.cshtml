@@ -1,0 +1,38 @@
+﻿@model CasIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Prikaz odrzanih casova</h2>
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Datum odrzanog casa</th>
+            <th>Akademska godina</th>
+            <th>Predmet</th>
+            <th>Broj prisutnih studenata</th>
+            <th>Prosjecna ocjena</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.casovi)
+        {
+            <tr>
+                <td>@item.DatumCasa</td>
+                <td>@item.AkademskaGodina</td>
+                <td>@item.Predmet</td>
+                <td>@item.BrojPrisutnihStudenata</td>
+                <td>
+                    @item.ProsjecnaOcjena.ToString("0.00")
+                </td>
+                <td>
+                    <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.CasID">Edit</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-action="Dodaj" asp-route-id="@Model.NastavnikID">Dodaj</a>
