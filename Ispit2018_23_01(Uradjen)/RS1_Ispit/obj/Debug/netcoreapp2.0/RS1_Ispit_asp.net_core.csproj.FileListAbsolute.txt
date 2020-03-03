@@ -1,0 +1,14 @@
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.deps.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.runtimeconfig.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.runtimeconfig.dev.json
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.dll
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\bin\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.pdb
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.csprojAssemblyReference.cache
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.AssemblyInfoInputs.cache
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.AssemblyInfo.cs
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.dll
+C:\Users\dzena\Desktop\RS1-Workshop\Ispit2018_23_01\RS1_Ispit\obj\Debug\netcoreapp2.0\RS1_Ispit_asp.net_core.pdb

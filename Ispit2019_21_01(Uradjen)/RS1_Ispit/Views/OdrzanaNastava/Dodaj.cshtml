@@ -1,0 +1,47 @@
+﻿@model RS1_Ispit_asp.net_core.ViewModels.NastavaDodajVM
+
+@{
+    ViewData["Title"] = "Dodaj";
+}
+
+<h2>Dodaj maturski ispit</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="PredajePredmetID" hidden="hidden" />
+            </div>
+            <div class="form-group">
+                <label asp-for="SkolaID" class="control-label"></label>
+                <select asp-for="SkolaID" asp-items="Model.Skole"></select>
+            </div>
+            <div class="form-group">
+                <h4>Nastavnik: @Model.Nastavnik</h4>
+                <span asp-validation-for="Nastavnik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <h4>Skolska godina: @Model.SkolskaGodina</h4>
+                <span asp-validation-for="SkolskaGodina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Datum" class="control-label"></label>
+                <input asp-for="Datum" class="form-control" />
+                <span asp-validation-for="Datum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PredmetID" class="control-label"></label>
+                <select asp-for="PredmetID" asp-items="Model.Predmeti"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Dodaj" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,76 @@
+﻿@model PopravniIspitUrediVM
+@{
+    ViewData["Title"] = "UrediPV";
+}
+<style>
+    .DA {
+        background-color: forestgreen;
+        color: white;
+    }
+
+    .NE {
+        background-color: red;
+        color: white;
+    }
+</style>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Ucenik</th>
+            <th>Odjeljenje</th>
+            <th>Broj u dnevniku</th>
+            <th>Pristupio ispitu</th>
+            <th>Bodovi(max 100)</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.popravniIspitStavke)
+        {
+            <tr>
+                <td>@item.Ucenik</td>
+                <td>@item.Odjeljenje</td>
+                <td>@item.BrojUDnevniku</td>
+                <td>
+                    <a ajax-poziv="da" href="/PopravniIspit/Prisustvo?id=@item.PopravniIspitStavkeID" ajax-rezultat="ajaxDiv">
+                        @if (item.Pristupio)
+                        {
+                            <span class="@item.PristupioString">
+                                @item.PristupioString
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="@item.PristupioString">
+                                @item.PristupioString
+                            </span>
+                        }
+                    </a>
+                </td>
+                <td>
+                    @if (item.Pristupio)
+                    {
+                        <form ajax-poziv="da" ajax-rezultat="ajaxDiv" action="/PopravniIspit/UpdateBodova">
+                            <input name="PopravniIspitStavkeID" value="@item.PopravniIspitStavkeID" hidden="hidden" />
+                            <input name="Bodovi" value="@item.Bodovi" />
+                            <button style="visibility:hidden" hidden="hidden" type="submit" class="btn btn-primary">Snimi</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span>@item.Bodovi</span>
+                    }
+                </td>
+                <td>
+                    @if (item.Pristupio)
+                    {
+                        <a class="btn btn-danger" ajax-poziv="da" href="/PopravniIspit/UpdateBodova?id=@item.PopravniIspitStavkeID" ajax-rezultat="ajaxDiv">
+                            Uredi
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

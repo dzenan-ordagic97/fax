@@ -1,0 +1,31 @@
+﻿@model UputnicaDetaljiVM
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h2>Detalji uputnice</h2>
+<hr />
+<h4>Datum uputnice: @Model.DatumUplatnice</h4>
+<h4>Pacijent: @Model.Pacijent</h4>
+<h4>
+    Datum rezultata:
+    @if (Model.DatumRezultata == null)
+    {
+        <span>Nema rezultata</span>
+    }
+    else
+    {
+        @Model.DatumRezultata
+    }
+</h4>
+<h4>Zavrsen unos: <a class="btn btn-primary" asp-action="Zakljucaj" asp-route-id="@Model.UputnicaID">Zakljucaj</a></h4>
+<div id="divTabela">
+
+</div>
+<script>
+    $(document).ready(function () {
+        $.get("/Uputnica/DetaljiPV?id=@Model.UputnicaID", function (data, status) {
+            $("#divTabela").html(data);
+        })
+    })
+</script>

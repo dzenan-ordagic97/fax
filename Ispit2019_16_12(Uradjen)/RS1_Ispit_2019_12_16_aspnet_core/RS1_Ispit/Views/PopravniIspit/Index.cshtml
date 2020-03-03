@@ -1,0 +1,21 @@
+﻿@model PopravniIspitIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Odaberite skolsku godinu, skolu i predmet</h2>
+<hr />
+<div>
+    <form method="post">
+        <select asp-for="SkolskaGodinaID" asp-items="Model.SkolskeGodine"></select>
+        <br />
+        <hr />
+        <select asp-for="SkolaID" asp-items="Model.Skole"></select>
+        <br />
+        <hr />
+        <select asp-for="PredmetID" asp-items="Model.Predmeti"></select>
+        <br />
+        <hr />
+        <button type="submit" class="btn btn-primary">Odaberi</button>
+    </form>
+</div>

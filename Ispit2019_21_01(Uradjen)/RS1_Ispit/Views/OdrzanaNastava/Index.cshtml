@@ -1,0 +1,27 @@
+﻿@model NastavaIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Skola</th>
+            <th>Ime i prezime nastavnika</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.nastavnici)
+        {
+        <tr>
+            <td>@item.Skola</td>
+            <td>@item.Nastavnik</td>
+            <td>
+                <a class="btn btn-info" asp-action="Detalji" asp-route-id="@item.PredajePredmetID">Odaberi</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

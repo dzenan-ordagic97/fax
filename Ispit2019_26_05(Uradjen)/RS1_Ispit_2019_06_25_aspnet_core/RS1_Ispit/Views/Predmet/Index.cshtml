@@ -1,0 +1,35 @@
+﻿@model PredmetIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Svi predmet</h2>
+<hr />
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Naziv predmeta</th>
+            <th>Akademska godina</th>
+            <th>Ime i prezime nastavnika</th>
+            <th>Broj odrzanih casova</th>
+            <th>Broj studenata na predmetu</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.angazovani)
+        {
+        <tr>
+            <td>@item.Predmet</td>
+            <td>@item.AkademskaGodina</td>
+            <td>@item.Nastavnik</td>
+            <td>@item.BrojOdrzanihCasova</td>
+            <td>@item.BrojStudenataNaPredmetu</td>
+            <td>
+                <a class="btn btn-info" asp-action="Detalji" asp-route-id="@item.AngazovanID">Odaberi</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,30 @@
+﻿@model  UputnicaDetaljiVM
+@{
+    ViewData["Title"] = "DetaljiPV";
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Pretraga</th>
+            <th>Izmjerena vrijednost</th>
+            <th>JMJ</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.pretrage)
+        {
+        <tr>
+            <td>@item.Pretraga</td>
+            <td>@item.NumerickaVrijednost</td>
+            <td>@item.MjernaJedinica</td>
+            <td>
+                <a class="btn btn-success" ajax-poziv="da" ajax-rezultat="divTabela" href="/Uputnica/UpdateRezultat?id=@item.RezultatiPretrageID" >Uredi</a>
+            </td>
+
+        </tr>
+        }
+    </tbody>
+</table>
+

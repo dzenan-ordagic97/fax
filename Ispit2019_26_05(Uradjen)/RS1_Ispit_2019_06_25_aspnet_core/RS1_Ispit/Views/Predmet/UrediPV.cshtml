@@ -1,0 +1,67 @@
+﻿@model PredmetUrediVM
+@{
+    ViewData["Title"] = "UrediPV";
+}
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Student</th>
+            <th>Pristupio ispitu</th>
+            <th>Ocjena</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.ispitStavke)
+        {
+        <tr>
+            <td>@item.StudentNaziv</td>
+            <td>
+                <a ajax-poziv="da" href="/Predmet/Prisustvo?id=@item.IspitStavkeID" ajax-rezultat="ajaxDiv">
+                    @if (item.Pristupio)
+                    {
+                        <span style="background-color:lawngreen;padding:5px">
+                            @item.PristupioString
+                        </span>
+
+                    }
+                    else
+                    {
+                        <span style="background-color:red; color:white; padding:5px">
+
+                            @item.PristupioString
+                        </span>
+
+                    }
+                </a>
+            </td>
+            <td>
+                @if(item.Pristupio && DateTime.Now>Model.Datum && Model.Evidentirani==false)
+                {
+                    <form ajax-poziv="da" ajax-rezultat="ajaxDiv" action="/Predmet/UpdateOcjena">
+                        <input name="IspitStavkeID" value="@item.IspitStavkeID" hidden="hidden"/>
+                        <input name="Ocjena" value="@item.Ocjena"/>
+                        <button style="visibility:hidden" hidden="hidden" type="submit" class="btn btn-primary">Snimi</button>
+                    </form>
+                }
+                else
+                {
+                    <span>@item.Ocjena</span>
+                }
+            </td>
+            <td>
+                @if (item.Pristupio && DateTime.Now > Model.Datum && Model.Evidentirani == false)
+                {
+                    <a class="btn btn-success" ajax-poziv="da" href="/Predmet/UpdateOcjena?id=@item.IspitStavkeID" ajax-rezultat="ajaxDiv">Uredi</a>
+                }
+                else
+                {
+                    <span>x</span>
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

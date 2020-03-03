@@ -1,0 +1,71 @@
+﻿@model RS1_Ispit_asp.net_core.ViewModels.PopravniIspitUrediVM
+
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Uredi popravni ispit</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Uredi">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="PopravniIspitID" hidden="hidden" />
+            </div>
+            <div class="form-group">
+                <label asp-for="ClanKomisije1Id" class="control-label"></label>
+                <select asp-for="ClanKomisije1Id" asp-items="Model.ClanoviKomisije"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClanKomisije2Id" class="control-label"></label>
+                <select asp-for="ClanKomisije2Id" asp-items="Model.ClanoviKomisije"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClanKomisije3Id" class="control-label"></label>
+                <select asp-for="ClanKomisije3Id" asp-items="Model.ClanoviKomisije"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Datum" class="control-label"></label>
+                <input asp-for="Datum" class="form-control" />
+                <span asp-validation-for="Datum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="SkolaID" hidden="hidden" />
+            </div>
+            <div class="form-group">
+                <h4>Skola: @Model.Skola</h4>
+                <span asp-validation-for="Skola" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="SkolskaGodinaID" hidden="hidden" />
+            </div>
+            <div class="form-group">
+                <h4>Skola: @Model.SkolskaGodina</h4>
+                <span asp-validation-for="SkolskaGodina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="PredmetID" hidden="hidden" />
+            </div>
+            <div class="form-group">
+                <h4>Skola: @Model.Predmet</h4>
+                <span asp-validation-for="Predmet" class="text-danger"></span>
+            </div>
+            <div id="ajaxDiv">
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Uredi" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        $.get("/PopravniIspit/UrediPV?id=@Model.PopravniIspitID", function (data, status) {
+            $("#ajaxDiv").html(data);
+        });
+    });
+</script>
+
+

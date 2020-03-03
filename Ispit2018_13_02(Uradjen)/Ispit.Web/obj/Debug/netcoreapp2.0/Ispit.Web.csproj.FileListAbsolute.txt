@@ -1,0 +1,17 @@
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\appsettings.Development.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\appsettings.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\bundleconfig.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\Properties\launchSettings.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\Ispit.Web.deps.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\Ispit.Web.runtimeconfig.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\Ispit.Web.runtimeconfig.dev.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\Ispit.Web.dll
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\Ispit.Web.pdb
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\Ispit.Data.dll
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\bin\Debug\netcoreapp2.0\Ispit.Data.pdb
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\obj\Debug\netcoreapp2.0\Ispit.Web.csprojAssemblyReference.cache
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\obj\Debug\netcoreapp2.0\Ispit.Web.AssemblyInfoInputs.cache
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\obj\Debug\netcoreapp2.0\Ispit.Web.AssemblyInfo.cs
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\obj\Debug\netcoreapp2.0\Ispit.Web.csproj.CopyComplete
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\obj\Debug\netcoreapp2.0\Ispit.Web.dll
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Web\obj\Debug\netcoreapp2.0\Ispit.Web.pdb

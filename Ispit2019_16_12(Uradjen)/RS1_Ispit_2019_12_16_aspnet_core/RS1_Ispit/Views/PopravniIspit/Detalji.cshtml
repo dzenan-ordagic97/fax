@@ -1,0 +1,34 @@
+﻿@model PopravniIspitDetaljiVM
+@{
+    ViewData["Title"] = "Detalji";
+}
+
+<h2>Detalji popravnog ispita</h2>
+<hr />
+<h4>Popravni ispit za @Model.Predmet - @Model.Skola - @Model.SkolskaGodina</h4>
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Datum popravnog ispita</th>
+            <th>1 clan komisije</th>
+            <th>Broj ucenika na popravnom ispitu</th>
+            <th>Broj ucenika koji su polozili popravni ispit</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.popravniIspit)
+        {
+        <tr>
+            <td>@item.Datum</td>
+            <td>@item.ClanKomisije1</td>
+            <td>@item.BrojUcenika</td>
+            <td>@item.BrojPolozenih</td>
+            <td>
+                <a class="btn btn-info" asp-action="Uredi" asp-route-id="@item.PopravniIspitID">Uredi</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-action="Dodaj" asp-route-id="@Model.PredajePredmetID">Dodaj</a>

@@ -1,0 +1,42 @@
+﻿@model UputnicaIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Prikaz evidentiranih uputnica</h2>
+<hr />
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Uputio</th>
+            <th>Pacijent</th>
+            <th>Vrsta pretrage</th>
+            <th>Datum evidentiranja</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var item in Model.uputnice)
+        {
+        <tr>
+            <td>@item.Datum | @item.UputioLjekar</td>
+            <td>@item.Pacijent</td>
+            <td>@item.VrstaPretrage</td>
+            <td>
+                @if(item.DatumEvidentiranja==null)
+                {
+                    <span>(nema rezultata)</span>
+                }
+                else
+                {
+                    @item.DatumEvidentiranja
+                }
+            </td>
+            <td>
+                <a class="btn btn-info" asp-action="Detalji" asp-route-id="@item.UputnicaID">Detalji</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a class="btn btn-primary" asp-action="Dodaj">Dodaj</a>

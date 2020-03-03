@@ -1,0 +1,26 @@
+﻿@model DogadjajDetaljiVM
+@{
+    ViewData["Title"] = "Rezultati";
+}
+
+<h2>Rezultati</h2>
+<br />
+<br />
+
+<h5>DatumDogadjaja: @Model.DatumDogadjaja</h5>
+<h5>DatumDodavanja: @Model.DatumDodavanja</h5>
+<h5>Opis: @Model.Opis</h5>
+<h5>Nastavnik: @Model.Nastavnik</h5>
+<div id="ajaxDiv">
+
+</div>
+<script>
+
+    $(document).ready(function () {
+
+          $.get("/OznaceniDogadaji/StanjeObavezaPV?id=@Model.OznaceniDogadjajID", function (data, status) {
+            $("#ajaxDiv").html(data);
+        });
+
+    });
+</script>

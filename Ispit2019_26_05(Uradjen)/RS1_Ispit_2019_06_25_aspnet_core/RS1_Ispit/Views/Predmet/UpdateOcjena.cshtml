@@ -1,0 +1,34 @@
+﻿@model RS1_Ispit_asp.net_core.ViewModels.UpdateOcjenaVM
+
+@{
+    ViewData["Title"] = "UpdateOcjena";
+}
+
+<h2>UpdateOcjena</h2>
+
+<h4>UpdateOcjenaVM</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form ajax-poziv="da" ajax-rezultat="ajaxDiv" action="/Predmet/UpdateOcjena">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="IspitStavkeID" hidden="hidden"/>
+            </div>
+            <div class="form-group">
+                <h4>Student: @Model.StudentIme</h4>
+                <span asp-validation-for="StudentIme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ocjena" class="control-label"></label>
+                <input asp-for="Ocjena" class="form-control" />
+                <span asp-validation-for="Ocjena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

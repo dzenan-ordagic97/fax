@@ -1,0 +1,8 @@
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Data\bin\Debug\netcoreapp2.0\Ispit.Data.deps.json
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Data\bin\Debug\netcoreapp2.0\Ispit.Data.dll
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Data\bin\Debug\netcoreapp2.0\Ispit.Data.pdb
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Data\obj\Debug\netcoreapp2.0\Ispit.Data.csprojAssemblyReference.cache
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Data\obj\Debug\netcoreapp2.0\Ispit.Data.AssemblyInfoInputs.cache
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Data\obj\Debug\netcoreapp2.0\Ispit.Data.AssemblyInfo.cs
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Data\obj\Debug\netcoreapp2.0\Ispit.Data.dll
+C:\Users\dzena\Desktop\RS1-Workshop\New folder (3)\Ispit.Data\obj\Debug\netcoreapp2.0\Ispit.Data.pdb

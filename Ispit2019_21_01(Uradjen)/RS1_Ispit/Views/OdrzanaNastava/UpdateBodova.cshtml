@@ -1,0 +1,32 @@
+﻿@model RS1_Ispit_asp.net_core.ViewModels.NastavaUpdateBodovaVM
+
+@{
+    ViewData["Title"] = "UpdateBodova";
+}
+
+<h2>Update bodova</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form ajax-poziv="da" ajax-rezultat="ajaxDiv" action="/OdrzanaNastava/UpdateBodova">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="MaturskiIspitStavkeID" hidden="hidden"/>
+            </div>
+            <div class="form-group">
+                <h4>Ucenik: @Model.Ucenik</h4>
+                <span asp-validation-for="Ucenik" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bodovi" class="control-label"></label>
+                <input asp-for="Bodovi" class="form-control" />
+                <span asp-validation-for="Bodovi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

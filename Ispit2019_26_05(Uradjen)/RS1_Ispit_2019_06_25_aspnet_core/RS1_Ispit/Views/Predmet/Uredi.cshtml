@@ -1,0 +1,23 @@
+﻿@model PredmetUrediVM
+@{
+    ViewData["Title"] = "Uredi";
+}
+
+<h2>Detalji ispita</h2>
+<hr />
+<h4>Predmet: @Model.Predmet</h4>
+<h4>Nastavnik: @Model.Nastavnik</h4>
+<h4>Skolska godina: @Model.SkolskaGodina</h4>
+<h4>Datum: @Model.Datum</h4>
+<h4>Napomena: @Model.Napomena</h4>
+<hr />
+<div id="ajaxDiv">
+
+</div>
+<script>
+    $(document).ready(function () {
+        $.get("/Predmet/UrediPV?id=@Model.IspitID", function (data, status) {
+            $("#ajaxDiv").html(data);
+        });
+    });
+</script>

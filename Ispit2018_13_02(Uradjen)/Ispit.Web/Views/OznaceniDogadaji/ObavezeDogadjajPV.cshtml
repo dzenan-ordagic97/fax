@@ -1,0 +1,68 @@
+﻿@model DogadjajDetaljiVM
+@{
+    ViewData["Title"] = "RezultatiPV";
+}
+
+
+
+<table class="table table-bordered ">
+    <thead>
+        <tr>
+            <th>
+                Naziv
+
+            </th>
+            <th>
+                Procenat realizacije
+                obaveze
+
+            </th>
+            <th>
+                Personalna
+                vrijednost za:
+                Šalji notifikaciju x dana
+                unaprijed
+            </th>
+            <th>
+                Personalna
+                vrijednost za:
+                Ponavljaj notifikaciju svaki dan do
+                početka događaja
+            </th>
+            <th>
+              Akcija
+            </th>
+         
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model._Obaveze)
+        {
+            <tr>
+                <td>
+                    @item.Naziv
+
+                </td>
+                <td>
+                    @item.Procenat
+
+                </td>
+                <td>
+                    @item.NotifikacijaUnaprijedDana
+
+                </td>
+                <td>
+                    @item.PonavljajNotiSvakiDanString
+
+                </td>
+                <td>
+                   <a ajax-poziv="da" ajax-rezultat="ajaxDiv" href="/OznaceniDogadaji/UrediObavezu?id=@item.StanjeObavezeID">uredi</a>
+
+                </td>
+             
+            </tr>
+
+        }
+    </tbody>
+</table>

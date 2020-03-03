@@ -1,0 +1,63 @@
+﻿@model DogadjajiVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="alert alert-warning" role="alert">
+    <strong>Događaj "ISPIT RS1" - 13.02.2018.</strong> <br />
+    Ovo je podsjetnik za obavezu "Pregledati pdf materijale". Označi kao <a href="" class="">pročitanu.</a>
+</div>
+
+<h2>Neoznačeni događaji</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Nastavnik</th>
+            <th>Opis</th>
+            <th>Broj obaveza</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model._NeOznaceniDog)
+        {
+            <tr>
+                <td>@item.DatumDogadjaja</td>
+                <td>@item.Nastavnik</td>
+                <td>@item.Opis</td>
+                <td>@item.BrojObaveza</td>
+                <td><a asp-action="Dodaj" asp-controller="OznaceniDogadaji" asp-route-id="@item.NeOznaceniDogadjajID" >Akcija</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<hr />
+<br />
+
+<h2>Označeni događaji</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Datum</th>
+            <th>Nastavnik</th>
+            <th>Opis</th>
+            <th>Relizovano obaveza RO</th>
+            <th>Akcija</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model._OznaceniDog)
+        {
+        <tr>
+            <td>@item.DatumDogadjaja</td>
+            <td>@item.Nastavnik</td>
+            <td>@item.Opis</td>
+            <td>@item.RealizovanoObaveza</td>
+            <td><a asp-action="Detalji" asp-controller="OznaceniDogadaji" asp-route-id="@item.OznaceniDogadjajID">Akcija</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
