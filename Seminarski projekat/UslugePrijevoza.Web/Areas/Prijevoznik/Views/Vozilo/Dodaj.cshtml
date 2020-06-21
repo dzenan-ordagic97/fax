@@ -1,0 +1,99 @@
+﻿@model VoziloDodajVM
+
+
+<link href="~/css/sb-admin-2.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" />
+
+
+<div class="card" style="padding:20px">
+    <form class="container text-center" method="post" enctype="multipart/form-data">
+        <h4 style="color:#4e73df;font-weight:bold;">Dodaj novo vozilo</h4>
+        <hr />
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group col-md-5" style="margin:auto;padding:15px;float:left">
+            <h2 id="titlovi" style="color:#4e73df;font-weight:bold;">Vozilo</h2>
+            <br />
+            <br />
+
+            <div class="form-group">
+                <label asp-for="ModelVozila" class="primary">Slike vozila</label>
+                <input type="file" name="Photos" multiple="multiple" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label asp-for="ModelVozila" class="primary">Model</label>
+                <select asp-items="Model.ModelVozila" class="form-control" asp-for="ModelVozilaID"></select> <hr /> <a class="btn btn-primary" asp-controller="ModelVozila" asp-action="Index" style="        width: 50%;
+">Dodajte novi model</a>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipVozila" class="primary">Tip</label>
+                <select asp-items="Model.TipVozila" class="form-control" asp-for="TipVozilaID"></select> <hr /> <a class="btn btn-primary" asp-controller="TipVozila" asp-action="Index" style="width:50%;">Dodajte novi tip</a>
+            </div>
+            <div class="form-group">
+                <label asp-for="RegistracijskaOznaka" class="primary">Registracija</label>
+                <input asp-for="RegistracijskaOznaka" class="form-control" placeholder="000-000-000" style="text-align:center;" />
+                <span asp-validation-for="RegistracijskaOznaka" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GodinaProizvodnje" class="primary">Godina proizvodnje</label>
+                <input type="date" asp-for="GodinaProizvodnje" class="form-control" placeholder="01-01-2000" style="text-align:center;" />
+                <span asp-validation-for="GodinaProizvodnje" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BrojMjesta" class="primary">Broj mjesta</label>
+                <input asp-for="BrojMjesta" class="form-control" placeholder="5" style="text-align:center;" />
+                <span asp-validation-for="BrojMjesta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ZapreminaPrtljaznika" class="primary">Zapremina prtljaznika</label>
+                <input asp-for="ZapreminaPrtljaznika" class="form-control" placeholder="100" style="text-align:center;" />
+                <span asp-validation-for="ZapreminaPrtljaznika" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-group col-md-5" style="margin:auto;padding:15px;float:right;">
+            <h2 id="titlovi" style="color:#4e73df;font-weight:bold;">Detalji</h2>
+            <br />
+            <br />
+
+            <div class="form-group">
+                <label asp-for="DetaljiVozila.Br_EUPaleta" class="primary">BrEU Paleta</label>
+                <input asp-for="DetaljiVozila.Br_EUPaleta" class="form-control" placeholder="5" style="text-align:center;" />
+                <span asp-validation-for="DetaljiVozila.Br_EUPaleta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DetaljiVozila.Cijena_km" class="primary">Cijena u KM</label>
+                <input asp-for="DetaljiVozila.Cijena_km" class="form-control" placeholder="1000" style="text-align:center;" />
+                <span asp-validation-for="DetaljiVozila.Cijena_km" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DetaljiVozila.MaxDuzina" class="primary">Maksimalna duzina</label>
+                <input asp-for="DetaljiVozila.MaxDuzina" class="form-control" placeholder="100" style="text-align:center;" />
+                <span asp-validation-for="DetaljiVozila.MaxDuzina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DetaljiVozila.MaxSirina" class="primary">Maksimalna sirina</label>
+                <input asp-for="DetaljiVozila.MaxSirina" class="form-control" placeholder="100" style="text-align:center;" />
+                <span asp-validation-for="DetaljiVozila.MaxSirina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DetaljiVozila.MaxTezina" class="primary">Maksimalna tezina</label>
+                <input asp-for="DetaljiVozila.MaxTezina" class="form-control" placeholder="1000" style="text-align:center;" />
+                <span asp-validation-for="DetaljiVozila.MaxTezina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DetaljiVozila.MaxVisina" class="primary">Maksimalna visina</label>
+                <input asp-for="DetaljiVozila.MaxVisina" class="form-control" placeholder="100" style="text-align:center;" />
+                <span asp-validation-for="DetaljiVozila.MaxVisina" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DetaljiVozila.Opis" class="primary">Opis</label>
+                <input asp-for="DetaljiVozila.Opis" class="form-control" placeholder="Description" style="text-align:center;" />
+                <span asp-validation-for="DetaljiVozila.Opis" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Spremi</button>
+            <button type="reset" class="btn btn-danger">Poništi</button>
+        </div>
+
+    </form>
+</div>

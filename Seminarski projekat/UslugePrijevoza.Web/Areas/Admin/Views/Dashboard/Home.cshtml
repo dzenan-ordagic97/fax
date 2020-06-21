@@ -1,0 +1,119 @@
+﻿@model DashboardVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="~/css/sb-admin-2.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" />
+
+@*<div class="row justify-content-center">
+
+        <div class="col-md-6">
+            <div class="justify-content-center">
+                <div class="col-md-12">
+                    <h4 class="card-title mt-0">  Profil </h4>
+                </div>
+                <hr />
+                <div style="padding-left:20%">
+                    <img style="width:75%; padding:10px; border-radius:10%;" alt="No photo!" src="@Model.Slika.URL" />
+                </div>
+                <br />
+                <form>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="Ime" ></label>
+                        <input asp-for="Ime" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="Prezime"></label>
+                        <input asp-for="Prezime" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="Adresa"></label>
+                        <input asp-for="Adresa" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="NazivPrijevoznika">Naziv prijevoznika</label>
+                        <input asp-for="NazivPrijevoznika" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="EmailPrijevoznika">Email prijevoznika</label>
+                        <input asp-for="EmailPrijevoznika" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                </form>
+                <a class="btn btn-primary" asp-controller="Dashboard" asp-action="Add" style="width:100%;">Uredi</a>
+            </div>
+        </div>
+    </div>*@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title m-0 font-weight-bold text-primary">Admin profile</h4>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating primary">Ime</label>
+                                <input asp-for="Ime" class="form-control" disabled />
+                                <span asp-validation-for="Ime" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating primary">Prezime</label>
+                                <input asp-for="Prezime" class="form-control" disabled />
+                                <span asp-validation-for="Prezime" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating primary">Email</label>
+                                <input asp-for="Email" class="form-control" disabled />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating primary">Adresa</label>
+                                <input asp-for="Adresa" class="form-control" disabled />
+                                <span asp-validation-for="Adresa" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating primary">JMBG</label>
+                                <input asp-for="JMBG" class="form-control" disabled />
+                                <span asp-validation-for="JMBG" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating primary">Spol</label>
+                                <input asp-for="Spol" class="form-control" disabled />
+                                <span asp-validation-for="Spol" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

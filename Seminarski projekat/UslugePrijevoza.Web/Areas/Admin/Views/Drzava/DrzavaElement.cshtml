@@ -1,0 +1,8 @@
+﻿@model DrzavaVM
+<tr id="@Model.DrzavaForSave.DrzavaID">
+    <td width="95%">@Model.DrzavaForSave.Naziv</td>
+    <td width="5%">
+        <a asp-controller="Drzava" asp-action="Edit" asp-route-id="@Model.DrzavaForSave.DrzavaID" class="btn btn-outline-info align-middle w-100 " style="color:white;margin-top:5px"> <i class="fas fa-edit fa-sm text-black-50"></i></a>
+        @* <button onclick="obrisi(@Model.DrzavaForSave.DrzavaID)" class="btn btn-outline-danger align-middle w-100 " style="color:white;margin-top:5px"> <i class="fas fa-trash fa-sm text-black-50"></i></button>*@
+    </td>
+</tr>

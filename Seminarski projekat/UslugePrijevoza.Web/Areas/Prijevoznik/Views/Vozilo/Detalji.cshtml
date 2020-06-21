@@ -1,0 +1,133 @@
+﻿@model VoziloDetaljiVM
+@{
+    ViewData["Title"] = "Index";
+}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="~/css/site.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<div class="col-md-12">
+
+    <div class="row justify-content-center align-items-center ">
+        <div class="col-md-12 col-xl-8 col-lg-10">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    @for (int i = 0; i < Model.Slike.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+
+                            <li data-target="#carouselExampleIndicators" data-slide-to="@i" class="active"></li>
+
+                        }
+                        else
+                        {
+                            <li data-target="#carouselExampleIndicators" data-slide-to="@i"></li>
+
+
+                        }
+
+                    }
+                </ol>
+                <div class="carousel-inner">
+
+                    @for (int i = 0; i < Model.Slike.Count; i++)
+                    {
+
+
+                        if (i == 0)
+                        {
+                            <div class="carousel-item active " data-interval="10000">
+                                <img src="@Model.Slike[i].Slike.URL" class="d-block w-100 " style="height:500px" alt="@Model.Slike[i].Slike.Naziv">
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="carousel-item" data-interval="10000">
+                                <img src="@Model.Slike[i].Slike.URL" class="d-block w-100 " style="height:500px" alt="@Model.Slike[i].Slike.Naziv">
+                            </div>
+                        }
+                    }
+
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row ustify-content-center align-items-center ">
+        <div class="col-md-12 card card-plain">
+            <div class="card-header card-header-info">
+                <h4 class="card-title mt-0">  Vozila </h4>
+                <p class="card-category"> Detalji vozila </p>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="stil">
+                        <thead class="">
+                            <tr>
+                                <th>Model</th>
+                                <th>Tip</th>
+                                <th>Godina proizvodnje</th>
+                                <th>Registracijska oznaka</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>@Model.ModelVozila </td>
+                                <td>@Model.TipVozila </td>
+                                <td>@Model.GodinaProizvodnje </td>
+                                <td>@Model.RegistracijskaOznaka  </td>
+                                @*<th width="10%">
+                                        @Enum.GetName(typeof(InfoRezervacija), Item.Zakljucen)
+                                    </th>*@
+
+                                @*<th width="5%">
+                                        <a class="btn btn-info btn-round btn-just-icon btn-raised" asp-controller="Rezervacija" asp-action="Detalji" asp-area="Klijent" asp-route-id="@Item.RezervacijaID"><i class="material-icons">info</i></a>
+
+                                    </th>
+                                    <th width="5%">
+                                        <a asp-controller="Rezervacija" asp-area="Klijent" asp-action="RezervacijaUredi" asp-route-id="@Item.RezervacijaID" class="btn btn-default btn-round btn-just-icon btn-raised"><i class="material-icons">edit</i></a>
+
+                                    </th>
+                                    <th width="5%">
+                                        <form asp-action="PonistiRezervaciju" asp-area="Klijent" asp-route-id="@Item.RezervacijaID" asp-controller="Rezervacija" method="post">
+
+                                            <button type="submit" class="btn btn-rose btn-round btn-just-icon btn-raised"><i class="material-icons">delete</i></button>
+                                        </form>
+
+                                    </th>*@
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<br />
+<a asp-controller="Vozilo" asp-area="Prijevoznik" asp-action="Detaljno" asp-route-id="@Model.VoziloID" class="btn btn-primary" style="width:25%;float:left;">Detaljno</a>
+<a asp-controller="Vozilo" asp-area="Prijevoznik" asp-action="Index" class="btn btn-danger" style="width:25%;float:right;">Nazad</a>
+
+
+
+
+
+
+
+

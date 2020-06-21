@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using UslugePrijevoza.Web.Areas.Identity.Data
+@inject SignInManager<MojIdentityUser> SignInManager
+@inject UserManager<MojIdentityUser> UserManager
+
+    <ul class="navbar-nav">
+        @if (SignInManager.IsSignedIn(User))
+        {
+            if (User.IsInRole("Prijevoznik"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-original-title="Login here" asp-area="Prijevoznik" asp-controller="Dashboard" asp-action="Home">Hello @User.Identity.Name!</a>
+                </li>
+            }
+            if (User.IsInRole("Klijent"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-original-title="Login here" asp-area="Klijent" asp-controller="Dashboard" asp-action="Home">Hello @User.Identity.Name!</a>
+                </li>
+            }
+            if (User.IsInRole("Administrator"))
+            {
+                <li class="nav-item">
+                    <a class="nav-link text-white" data-original-title="Login here" asp-area="Admin" asp-controller="Dashboard" asp-action="Home">Hello @User.Identity.Name!</a>
+                </li>
+            }
+            <li class="nav-item">
+                <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit" class="nav-link btn btn-link text-white">Logout</button>
+                </form>
+            </li>
+        }
+        else
+        {
+            @*<li class="nav-item">
+                <a class="btn mojBtn" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </li>*@
+            <li class="nav-item">
+                <a class="text-white " rel="tooltip" data-original-title="Login here" asp-area="Identity" asp-page="/Account/Login">
+                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                        <i class="ni ni-circle-08"></i>
+                    </div>
+                </a>
+            </li>
+        }
+    </ul>

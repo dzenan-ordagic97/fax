@@ -1,0 +1,27 @@
+﻿@model KomentariOcjenaVM
+<div class="row">
+    <div class="col-lg-12 mb-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Komentari za ocjenu @Model.Ocjena</h6>
+            </div>
+            <div class="card-body">
+                @foreach (var item in Model.Komentari)
+                {
+
+                    <div class="card border-left-info " style="margin-bottom:10px">
+                        <div class="card-body">
+                            <img style="width:60px;height:60px" src="@item.UserSlika"/>
+                            <h5>@item.User</h5>
+                            <h6>@item.NazivPrijevoza</h6>
+                            <p>@item.Komentar</p>
+                            <p>@item.Datum</p>
+                            <a href="/Prijevoznik/Prijevoz/DetaljnoInfo/@item.PrijevozID"> Link do prijevoza</a>
+                        </div>
+                    </div>
+                   
+                }
+            </div>
+        </div>
+    </div>
+</div>

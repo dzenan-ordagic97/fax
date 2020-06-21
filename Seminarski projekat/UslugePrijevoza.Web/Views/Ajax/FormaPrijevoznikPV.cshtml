@@ -1,0 +1,76 @@
+﻿@model UslugePrijevoza.Web.Areas.Identity.Pages.Account.RegisterModel
+
+<div>
+    <h4 class="card-title">Additional info</h4>
+    <hr />
+</div>
+<div class="form-group">
+    @foreach (var gender in Model.Input.Prijevoznik.Spolovi)
+    {
+        @if (gender == "Male")
+        {
+            <div style="float:left;margin-left:10%">
+                <input type="radio" asp-for="@Model.Input.Prijevoznik.Spol" value="@gender" />@gender<br />
+            </div>
+        }
+        else
+        {
+            <div style="float:right;margin-right:14%">
+                <input type="radio" asp-for="@Model.Input.Prijevoznik.Spol" value="@gender" />@gender<br />
+            </div>
+        }
+    }
+</div>
+<br />
+<br />
+<div class="form-group">
+    <i class="ni ni-delivery-fast"></i>
+    <label asp-for="Input.Prijevoznik.NazivPrijevoznika"></label>
+    <input asp-for="Input.Prijevoznik.NazivPrijevoznika" class="form-control" />
+</div>
+<div class="form-group">
+    <i class="ni ni-mobile-button"></i>
+    <label asp-for="Input.Prijevoznik.Telefon"></label>
+    <input asp-for="Input.Prijevoznik.Telefon" class="form-control" />
+</div>
+<div class="form-group">
+    <i class="ni ni-email-83"></i>
+    <label asp-for="Input.Prijevoznik.KontaktEmail"></label>
+    <input asp-for="Input.Prijevoznik.KontaktEmail" class="form-control" />
+</div>
+<div class="form-group">
+    <i class="ni ni-ui-04"></i>
+    <label asp-for="Input.Prijevoznik.JMBG"></label>
+    <input asp-for="Input.Prijevoznik.JMBG" class="form-control" />
+</div>
+<div class="form-group">
+    <i class="ni ni-calendar-grid-58"></i>
+    <label asp-for="Input.Prijevoznik.DatumRodjenja"></label>
+    <input asp-for="Input.Prijevoznik.DatumRodjenja" class="form-control" />
+</div>
+<div class="form-group">
+    <i class="ni ni-map-big"></i>
+    <label>Drzave</label>
+    @Html.DropDownListFor(model => model.Input.Prijevoznik.DrzavaID, Model.Input.Prijevoznik.Drzave.Select(x => new SelectListItem { Text = x.Text, Value = x.Value }), "Odaberite Drzavu", htmlAttributes: new { @class = "form-control Target" })
+
+</div>
+<div id="root2">
+
+</div>
+
+<div class="form-group">
+    <i class="ni ni-square-pin"></i>
+    <label asp-for="Input.Prijevoznik.Adresa"></label>
+    <input asp-for="Input.Prijevoznik.Adresa" class="form-control" />
+</div>
+<button type="submit" class="btn btn-primary float-right" style="width:100%;">Register</button>
+
+<script>
+    $(".Target").change(function () {
+        var end = this.value;
+        $.get("/Ajax/GetGradoviPPV?id=" + end,
+            function (rezultat, status) {
+                $('#root2').html(rezultat);
+            });
+    });
+</script>

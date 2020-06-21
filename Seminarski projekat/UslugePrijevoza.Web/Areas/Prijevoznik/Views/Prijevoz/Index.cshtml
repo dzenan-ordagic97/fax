@@ -1,0 +1,157 @@
+﻿@model PrijevozIndexVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/site.css">
+
+
+<h4>
+    <span class="primary2">Pregled rezervacije</span> <a class="btn btn-danger " style="float:right;" asp-action="Pregled" >Prikaz zavrsenih transakcija</a>
+
+</h4>
+<hr />
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-danger">Neprihvaćene rezervacije (All)</h6>
+    </div>
+    <div class="card-body">
+        @if (Model.BrojacGlobalno == 0)
+        {
+            <p style="width:100%;color:red;text-align:center">Nema rezultata</p>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered" id="stil" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Pocetna lokacija</th>
+                            <th>Krajnja lokacija</th>
+                            <th>Pocetni datum prijevoza</th>
+                            <th>User</th>
+                            <th>Mogucnosti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.BrojacGlobalno == 0)
+                        {
+
+                        }
+                        @foreach (var item in Model.rezervacije)
+                        {
+                            if (!item.Prihvaceno && item.PrijevozID == null)
+                            {
+                                <tr>
+                                    <td>@item.PocetnaLokacija</td>
+                                    <td>@item.KrajnjaLokacija</td>
+                                    <td>@item.PocetniDatumPrijevoza</td>
+                                    <td>@item.User</td>
+                                    <td>
+                                        <a class="btn btn-primary btn-block" asp-action="Detaljno" asp-route-id="@item.TeretRezervacijaID">Detaljno</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Neprihvaćene rezervacije (For you)</h6>
+    </div>
+    <div class="card-body">
+        @if (Model.BrojacPrijevoznik == 0)
+        {
+            <p style="width:100%;color:red;text-align:center">Nema rezultata</p>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered" id="stil" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Pocetna lokacija</th>
+                            <th>Krajnja lokacija</th>
+                            <th>Pocetni datum prijevoza</th>
+                            <th>User</th>
+                            <th>Mogucnosti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.rezervacije)
+                        {
+                            if (!item.Prihvaceno && item.PrijevozID != null)
+                            {
+                                <tr>
+                                    <td>@item.PocetnaLokacija</td>
+                                    <td>@item.KrajnjaLokacija</td>
+                                    <td>@item.PocetniDatumPrijevoza</td>
+                                    <td>@item.User</td>
+                                    <td>
+                                        <a class="btn btn-danger btn-block" asp-action="Ukloni" asp-route-id="@item.TeretRezervacijaID">Uklonite</a>
+                                        <hr />
+                                        <a class="btn btn-primary btn-block" asp-action="Detaljno" asp-route-id="@item.TeretRezervacijaID">Detaljno</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-success">Prihvaćene rezervacije</h6>
+    </div>
+    <div class="card-body">
+        @if (Model.BrojacPrihvacenih == 0)
+        {
+            <p style="width:100%;color:red;text-align:center">Nema rezultata</p>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-bordered" id="stil" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Pocetna lokacija</th>
+                            <th>Krajnja lokacija</th>
+                            <th>Pocetni datum prijevoza</th>
+                            <th>User</th>
+                            <th>Mogucnosti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.rezervacije)
+                        {
+                            @if (item.Prihvaceno == true && item.Zavrseno == false)
+                            {
+                                <tr>
+                                    <td>@item.PocetnaLokacija</td>
+                                    <td>@item.KrajnjaLokacija</td>
+                                    <td>@item.PocetniDatumPrijevoza</td>
+                                    <td>@item.User</td>
+                                    <td>
+                                        <a class="btn btn-danger btn-block" asp-action="Ukloni" asp-route-id="@item.TeretRezervacijaID">Uklonite</a>
+                                        <hr />
+                                        <a class="btn btn-success btn-block" asp-action="Zavrsi" asp-route-id="@item.TeretRezervacijaID">Zavrsite</a>
+                                        <hr />
+                                        <a class="btn btn-primary btn-block" asp-action="Detaljno" asp-route-id="@item.TeretRezervacijaID">Detaljno</a>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>
+

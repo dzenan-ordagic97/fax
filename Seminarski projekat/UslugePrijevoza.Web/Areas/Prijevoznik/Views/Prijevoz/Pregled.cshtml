@@ -1,0 +1,57 @@
+﻿@model PrijevozPregledVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link rel="stylesheet" href="~/css/site.css">
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+            Zavrsene transakcije 
+        </h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Pocetna lokacija</th>
+                        <th>Krajnja lokacija</th>
+                        <th>Pocetni datum prijevoza</th>
+                        <th>Teret</th>
+                        <th>Opis</th>
+                        <th>Tezina</th>
+                        <th>Visina</th>
+                        <th>Sirina</th>
+                        <th>User</th>
+                        <th>Mogucnost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.pregledi)
+                    {
+                        if (item.Zavrseno)
+                        {
+                            <tr>
+                                <td>@item.PocetnaLokacija</td>
+                                <td>@item.KrajnjaLokacija</td>
+                                <td>@item.PocetniDatumPrijevoza</td>
+                                <td>@item.Naziv</td>
+                                <td>@item.Opis</td>
+                                <td>@item.Tezina</td>
+                                <td>@item.MaxVisina</td>
+                                <td>@item.MaxSirina</td>
+                                <td>@item.User</td>
+                                <td>
+                                    <a class="btn btn-primary btn-block" asp-action="Detaljno" asp-route-id="@item.TeretRezervacijaID">Detaljno</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

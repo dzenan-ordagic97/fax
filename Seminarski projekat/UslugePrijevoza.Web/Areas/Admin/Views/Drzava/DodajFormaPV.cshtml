@@ -1,0 +1,12 @@
+﻿@model DrzavaVM
+    <form ajax-poziv="da" action="Drzava/Dodaj" ajax-isAppending="true" ajax-rezultat="rootElement" method="post">
+        <div class="form-group">
+            <label asp-for="DrzavaForSave.Naziv" class="primary2"></label>
+            <input asp-for="DrzavaForSave.Naziv" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="DrzavaForSave.Skracenica" class="primary2"></label>
+            <input asp-for="DrzavaForSave.Skracenica" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Spremi</button>
+    </form>

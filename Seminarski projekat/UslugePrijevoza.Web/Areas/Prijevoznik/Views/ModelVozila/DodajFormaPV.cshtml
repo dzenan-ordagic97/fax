@@ -1,0 +1,8 @@
+﻿@model ModelVozilaVM
+<form ajax-poziv="da" action="ModelVozila/Dodaj" ajax-isAppending="true" ajax-rezultat="rootElement" method="post">
+    <div class="form-group">
+        <label asp-for="ModelVozilaForSave.Naziv" class="primary2"></label>
+        <input asp-for="ModelVozilaForSave.Naziv" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Spremi</button>
+</form>

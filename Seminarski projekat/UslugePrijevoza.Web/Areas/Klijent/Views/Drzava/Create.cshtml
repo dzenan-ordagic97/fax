@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+    <div class="row">
+        <div class="col-8">
+            <form asp-action="CreateSave" asp-area="Klijent" asp-controller="Drzava" method="post">
+
+                <input name="Naziv" type="text" hint="Naziv"/>
+                <button type="submit"></button>
+            </form>
+        </div>
+    </div>
+

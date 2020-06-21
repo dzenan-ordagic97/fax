@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword />
+    <_PublishTargetUrl>ftp://app.fit.ba/httpdocs</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>10/29/2019 17:37:05</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>04/07/2020 17:05:22</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>09/20/2019 22:26:20</publishTime>
+    </File>
+    <File Include="libman.json">
+      <publishTime>03/16/2020 15:34:14</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Connections.Abstractions.dll">
+      <publishTime>01/18/2020 17:38:44</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll">
+      <publishTime>09/15/2019 21:04:32</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Http.Features.dll">
+      <publishTime>01/18/2020 17:33:40</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll">
+      <publishTime>09/15/2019 21:04:30</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Identity.UI.dll">
+      <publishTime>09/15/2019 21:09:10</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Identity.UI.Views.V3.dll">
+      <publishTime>09/15/2019 21:19:26</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Identity.UI.Views.V4.dll">
+      <publishTime>09/15/2019 21:24:00</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Razor.Language.dll">
+      <publishTime>09/14/2019 21:02:58</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.SignalR.Common.dll">
+      <publishTime>01/18/2020 17:33:46</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>08/14/2019 23:21:22</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.CSharp.Workspaces.dll">
+      <publishTime>08/14/2019 23:21:30</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.dll">
+      <publishTime>08/14/2019 23:20:00</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Razor.dll">
+      <publishTime>09/14/2019 21:03:02</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.Workspaces.dll">
+      <publishTime>08/14/2019 23:20:50</publishTime>
+    </File>
+    <File Include="Microsoft.Data.SqlClient.dll">
+      <publishTime>09/06/2019 00:20:12</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Abstractions.dll">
+      <publishTime>09/14/2019 04:11:02</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Design.dll">
+      <publishTime>09/14/2019 04:11:32</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.dll">
+      <publishTime>09/14/2019 04:11:22</publishTime>
+    </File>
+    <File Include="Microsoft.EntityFrameworkCore.Relational.dll">
+      <publishTime>09/14/2019 04:11:26</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

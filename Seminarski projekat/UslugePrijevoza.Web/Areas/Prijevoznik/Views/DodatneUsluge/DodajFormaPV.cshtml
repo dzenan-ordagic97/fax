@@ -1,0 +1,16 @@
+﻿@model DodatneUslugeVM
+    <form ajax-poziv="da" action="DodatneUsluge/Dodaj" ajax-isAppending="true" ajax-rezultat="rootElement" method="post">
+        <div class="form-group">
+            <label asp-for="DodatneUslugeForSave.Naziv" class="primary2"></label>
+            <input asp-for="DodatneUslugeForSave.Naziv" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="DodatneUslugeForSave.Cijena" class="primary2"></label>
+            <input asp-for="DodatneUslugeForSave.Cijena" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="DodatneUslugeForSave.Opis" class="primary2"></label>
+            <input asp-for="DodatneUslugeForSave.Opis" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary">Spremi</button>
+    </form>

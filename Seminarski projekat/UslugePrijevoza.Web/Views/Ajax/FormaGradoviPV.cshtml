@@ -1,0 +1,9 @@
+﻿@model UslugePrijevoza.Web.Areas.Identity.Pages.Account.RegisterModel
+
+<div class="form-group">
+    <label>Gradovi</label>
+   @* @Html.DropDownListFor(model => model.Input.Klijent.GradID, Model.Input.Klijent.Gradovi.Select(x => new SelectListItem { Text = x.Text, Value = x.Value }), "Odaberite Grad", htmlAttributes: new { @class = "form-control" })*@
+  
+    <select asp-items="Model.Input.Klijent.Gradovi" class="form-control" asp-for="Input.Klijent.GradID" ></select>
+</div>
+

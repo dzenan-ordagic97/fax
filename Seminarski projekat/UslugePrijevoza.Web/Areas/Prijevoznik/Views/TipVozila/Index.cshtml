@@ -1,0 +1,95 @@
+﻿@model TipVozilaVM
+@{
+    ViewData["Title"] = "Index";
+    var triger = false;
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="~/js/ajax.js"></script>
+
+<div class="col-md-12">
+    <div class="card ">
+        @*modal*@
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title primary" id="exampleModalLongTitle">Dodaj</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <partial name="DodajFormaPV" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @*end modal*@
+
+        <div class="card-body">
+            <h4 class="card-title mt-0 primary2"> Tipovi vozila </h4> <a class="btn btn-danger" asp-area="Prijevoznik" asp-controller="Vozilo" asp-action="Dodaj" style="float:right;">Nazad</a>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                Dodaj novi tip vozila
+            </button>
+            <div class="table-responsive" style="margin-top:20px">
+
+                <table class="table table-hover">
+                    <thead class="">
+
+                    </thead>
+                    <tbody id="rootElement">
+                        @foreach (var Item in Model.TipoviVozila)
+                        {
+                            <tr id="@Item.TipVozilaID">
+                                <td width="95%">@Item.Naziv</td>
+                                <td width="5%">
+                                    @foreach (var item2 in Model.MojaVozila)
+                                    {
+                                        @if (Item.Naziv == item2.TipVozila.Naziv)
+                                        {
+                                            triger = true;
+                                        }
+                                    }
+                                    @if (triger == true)
+                                    {
+                                        <button class="btn btn-outline-danger align-middle w-100 onhover" title="Postoji vozilo s ovim tipom" style="color:white;margin-top:5px" disabled> <i class="fas fa-trash fa-sm text-black-50"></i></button>
+                                    }
+                                    @if (!triger)
+                                    {
+                                        <button onclick="obrisi(@Item.TipVozilaID)" class="btn btn-outline-danger align-middle w-100 " style="color:white;margin-top:5px"> <i class="fas fa-trash fa-sm text-black-50"></i></button>
+                                    }
+                                    @if(triger)
+                                    {
+                                        triger = false;
+                                    }
+                                </td>
+
+
+                            </tr>
+
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    function obrisi(x) {
+        $.get("/Prijevoznik/TipVozila/Obrisi?id=" + x, function (data, status) {
+            $("#" + data).remove();
+        });
+    }
+</script>

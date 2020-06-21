@@ -1,0 +1,33 @@
+﻿@model GradEditVM
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="justify-content-center">
+            <div class="card" style="padding:20px;">
+
+                <div class="col-md-12">
+                    <h4 class="card-title mt-0 primary">  Edit grada </h4>
+                </div>
+                <hr />
+                <form method="post">
+                    <input asp-for="GradID" hidden="hidden" />
+                    <div class="form-group">
+                        <label asp-for="Naziv" class="control-label primary2"></label>
+                        <input asp-for="Naziv" class="form-control" />
+                        <span asp-validation-for="Naziv" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PostanskiBroj" class="control-label primary2"></label>
+                        <input asp-for="PostanskiBroj" class="form-control" />
+                        <span asp-validation-for="PostanskiBroj" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" style="text-align:center;">
+                        <button type="submit" class="btn btn-primary">Snimi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

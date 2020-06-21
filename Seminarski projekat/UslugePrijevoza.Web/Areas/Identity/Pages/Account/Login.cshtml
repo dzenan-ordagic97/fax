@@ -1,0 +1,115 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+@*
+    <div class="row justify-content-center align-items-center">
+        <div class="col-md-4">
+            <section>
+                <form id="account" method="post">
+                    <h1>@ViewData["Title"]</h1>
+
+                    <hr />
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Input.Email"></label>
+                        <input asp-for="Input.Email" class="form-control" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Input.Password"></label>
+                        <input asp-for="Input.Password" class="form-control" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label asp-for="Input.RememberMe">
+                                <input asp-for="Input.RememberMe" />
+                                @Html.DisplayNameFor(m => m.Input.RememberMe)
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Log in</button>
+                    </div>
+                    <div class="form-group">
+                        <p>
+                            <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
+                        </p>
+                        <p>
+                            <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                        </p>
+                        <p>
+                            <button type="submit" asp-page-handler="SendVerificationEmail" class="btn-link" style="padding:0px;margin:0px;border:0px">Resend email confirmation</button>
+                        </p>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+*@
+
+<br />
+<div class="container pt-sm-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-auto">
+            <div class="card bg-secondary shadow border-0">
+                <div class="card-body px-sm-7 py-lg-4">
+                    <form id="account" method="post">
+                        <h1>
+                            <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                                <i class="ni ni-badge"></i>
+                            </div>
+                            @ViewData["Title"]
+                        </h1>
+                        <hr />
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                        <div class="form-group">
+                            <i class="ni ni-email-83"></i>
+                            <label asp-for="Input.Email"></label>
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <i class="ni ni-key-25"></i>
+                            <label asp-for="Input.Password"></label>
+                            <input asp-for="Input.Password" class="form-control" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input class="custom-control-input" id="customCheck1" type="checkbox" asp-for="Input.RememberMe" />
+                                <label class="custom-control-label" for="customCheck1">
+                                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" style="width:100%;">Log in</button>
+                        </div>
+                        <hr />
+                        <div class="form-group">
+                            <p>
+                                @*<button type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link btn-default" style="color:white;width:100%;">Resend email confirmation</button>*@
+                                <a id="forgot-password" asp-page="./ForgotPassword" class="btn btn-default" style="width:100%;">Forgot your password?</a>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <p>
+                                <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl" class="btn btn-default" style="width:100%;">Register as a new user</a>
+                            </p>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

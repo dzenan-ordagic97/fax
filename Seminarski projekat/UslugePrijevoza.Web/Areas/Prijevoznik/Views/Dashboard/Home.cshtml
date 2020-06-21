@@ -1,0 +1,209 @@
+﻿@model DashboardVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+<link href="~/css/sb-admin-2.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" />
+
+@*<div class="row justify-content-center">
+
+        <div class="col-md-6">
+            <div class="justify-content-center">
+                <div class="col-md-12">
+                    <h4 class="card-title mt-0">  Profil </h4>
+                </div>
+                <hr />
+                <div style="padding-left:20%">
+                    <img style="width:75%; padding:10px; border-radius:10%;" alt="No photo!" src="@Model.Slika.URL" />
+                </div>
+                <br />
+                <form>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="Ime" ></label>
+                        <input asp-for="Ime" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="Prezime"></label>
+                        <input asp-for="Prezime" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="Adresa"></label>
+                        <input asp-for="Adresa" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="NazivPrijevoznika">Naziv prijevoznika</label>
+                        <input asp-for="NazivPrijevoznika" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                    <div class="form-group">
+                        <i class="ni ni-single-02"></i>
+                        <label asp-for="EmailPrijevoznika">Email prijevoznika</label>
+                        <input asp-for="EmailPrijevoznika" class="form-control" disabled style="text-align:center;" />
+                    </div>
+                </form>
+                <a class="btn btn-primary" asp-controller="Dashboard" asp-action="Add" style="width:100%;">Uredi</a>
+            </div>
+        </div>
+    </div>*@
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Ukupno zaradjeno</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">$@Model.Cijene</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <a asp-controller="Prijevoz" asp-action="Index">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Neprihvacene rezervacije</div>
+                        </a>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.BrojacRezervacije</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <a asp-controller="Vozilo" asp-action="Index">
+
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Ukupno vozila</div>
+                        </a>
+
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.BrojVozila</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-car fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <a asp-controller="Prijevoz" asp-action="Pregled">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Ukupno prijevoza izvrseno</div>
+                        </a>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@Model.UkupnoPrijevoza</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-truck fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title m-0 font-weight-bold text-primary">Profile</h4>
+            </div>
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating">Ime</label>
+                                <input asp-for="Ime" class="form-control" disabled />
+                                <span asp-validation-for="Ime" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating">Prezime</label>
+                                <input asp-for="Prezime" class="form-control" disabled />
+                                <span asp-validation-for="Prezime" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating">Telefon</label>
+                                <input asp-for="PhoneNumber" class="form-control" disabled />
+                                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating ">Adresa</label>
+                                <input asp-for="Adresa" class="form-control" disabled />
+                                <span asp-validation-for="Adresa" class="text-danger"></span>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating ">Naziv prijevoznika</label>
+                                <input asp-for="NazivPrijevoznika" class="form-control" disabled />
+                                <span asp-validation-for="NazivPrijevoznika" class="text-danger"></span>
+
+                            </div>
+                        </div><div class="col-md-4">
+                            <div class="form-group bmd-form-group is-filled">
+                                <label class="bmd-label-floating ">Email prijevoznika</label>
+                                <input asp-for="EmailPrijevoznika" class="form-control" disabled />
+                                <span asp-validation-for="EmailPrijevoznika" class="text-danger"></span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center">
+                        <a class="btn btn-primary" asp-controller="Dashboard" asp-action="Add">Uredi</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card card-profile">
+            <div class="contains" style="margin:auto;margin-top:15%;">
+                <img class="image" style="width:100%;" alt="No photo!" src="@Model.Slika.URL" />
+            </div>
+            <div class="card-body">
+                <h4 class="card-title primary2" >@Model.Ime @Model.Prezime</h4>
+                <h4 class="card-category primary2" >@Model.Grad</h4>
+                @* <h4 class="card-title">@Model.Username</h4>*@
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+

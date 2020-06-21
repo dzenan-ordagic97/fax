@@ -1,0 +1,75 @@
+﻿@model UslugePrijevoza.Web.Areas.Prijevoznik.ViewModels.PrijevozDodajVM
+
+
+<link href="~/css/sb-admin-2.css" rel="stylesheet" />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="justify-content-center">
+            <div class="card" style="padding:20px">
+                <div class="col-md-12">
+                    <h4 class="card-title mt-0 primary">  Dodaj prijevoz </h4>
+                </div>
+                <hr />
+                <form class="container text-center" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <input asp-for="TeretRezervacijaID" hidden="hidden" />
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="PrijevoznikID" hidden="hidden" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DatumPrijevoza" class="control-label primary2"></label>
+                        <input asp-for="DatumPrijevoza" class="form-control" />
+                        <span asp-validation-for="DatumPrijevoza" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Cijena" class="control-label primary2"></label>
+                        <input  asp-for="Cijena" class="form-control" />
+                        <span asp-validation-for="Cijena" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Kilometraza" class="control-label primary2"></label>
+                        <input asp-for="Kilometraza" class="form-control" />
+                        <span asp-validation-for="Kilometraza" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="TipPrijevoza" class="control-label primary2">Tip prijevoza</label>
+                        <input asp-for="TipPrijevoza" class="form-control" />
+                        <span asp-validation-for="TipPrijevoza" class="text-danger"></span>
+                    </div>
+                    @if (Model.BrojacVozila == 0)
+                    {
+                        <div class="form-group">
+                            <label asp-for="Vozila" class="control-label primary2">Vozila</label><br />
+                            <a class="btn btn-primary" asp-area="Prijevoznik" asp-controller="Vozilo" asp-action="Dodaj">Dodaj vozilo</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <label asp-for="Vozila" class="control-label primary2">Vozila</label><br />
+                            <select style="width:100%;" asp-for="VoziloID" asp-items="Model.Vozila" required></select>
+                        </div>
+                    }
+                    @if (Model.BrojacVozila == 0)
+                    {
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" disabled>Dodaj</button>  <a class="btn btn-danger" asp-action="Index">Nazad</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Dodaj</button>  <a class="btn btn-danger" asp-action="Index">Nazad</a>
+                        </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/site.js"></script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6IVVIweCmbW9h0GVkj1Ff7UUn3wXfk8Q&callback=initMap">
+</script>

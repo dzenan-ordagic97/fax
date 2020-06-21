@@ -1,0 +1,68 @@
+﻿@model UslugePrijevoza.Web.Areas.Identity.Pages.Account.RegisterModel
+
+<div>
+    <h4 class="card-title">Additional info</h4>
+    <hr />
+</div>
+<div class="form-group">
+    @foreach (var gender in Model.Input.Klijent.Spolovi)
+    {
+        @if (gender == "Male")
+        {
+            <div style="float:left;margin-left:10%">
+                <input type="radio" asp-for="@Model.Input.Klijent.Spol" value="@gender" />@gender<br />
+            </div>
+        }
+        else
+        {
+            <div style="float:right;margin-right:14%">
+                <input type="radio" asp-for="@Model.Input.Klijent.Spol" value="@gender" />@gender<br />
+            </div>
+        }
+    }
+</div>
+<br />
+<br />
+<div class="form-group">
+    <i class="ni ni-mobile-button"></i>
+    <label asp-for="Input.Klijent.Telefon"></label>
+    <input asp-for="Input.Klijent.Telefon" class="form-control" />
+</div>
+<div class="form-group">
+    <i class="ni ni-ui-04"></i>
+    <label asp-for="Input.Klijent.JMBG"></label>
+    <input asp-for="Input.Klijent.JMBG" class="form-control" />
+</div>
+<div class="form-group">
+    <i class="ni ni-calendar-grid-58"></i>
+    <label asp-for="Input.Klijent.DatumRodjenja"></label>
+    <input asp-for="Input.Klijent.DatumRodjenja" class="form-control" />
+</div>
+
+<div class="form-group">
+    <i class="ni ni-map-big"></i>
+    <label>Drzave</label>
+    @Html.DropDownListFor(model => model.Input.Klijent.DrzavaID, Model.Input.Klijent.Drzave.Select(x => new SelectListItem { Text = x.Text, Value = x.Value }), "Odaberite Drzavu", htmlAttributes: new { @class = "form-control Target" })
+
+</div>
+<div id="root2">
+
+</div>
+
+<div class="form-group">
+    <i class="ni ni-square-pin"></i>
+    <label asp-for="Input.Klijent.Adresa"></label>
+    <input asp-for="Input.Klijent.Adresa" class="form-control" />
+</div>
+<button type="submit" class="btn btn-primary float-right" style="width:100%;">Register</button>
+
+<script>
+    $(".Target").change(function () {
+        var end = this.value;
+        $.get("/Ajax/GetGradoviPV?id=" + end,
+            function (rezultat, status) {
+                $('#root2').html(rezultat);
+            });
+    });
+</script>
+

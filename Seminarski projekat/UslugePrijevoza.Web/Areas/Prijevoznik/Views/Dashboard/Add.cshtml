@@ -1,0 +1,44 @@
+﻿@model UslugePrijevoza.Web.Areas.Prijevoznik.ViewModels.DashboardAddVM
+
+<link href="~/css/sb-admin-2.css" rel="stylesheet" />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="justify-content-center">
+            <div class="card" style="padding:20px;">
+                <div class="col-md-12">
+                    <h4 class="card-title mt-0 primary3">  Izmjena informacija </h4>
+                </div>
+                <hr />
+
+                <form class="container text-center" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Photos" class="primary2">Slika prijevoznika</label>
+                        <input type="file" name="Photos" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="NazivPrijevoznika" class="control-label primary2"></label>
+                        <input asp-for="NazivPrijevoznika" class="form-control" required />
+                        <span asp-validation-for="NazivPrijevoznika" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmailPrijevoznika" class="control-label primary2"></label>
+                        <input asp-for="EmailPrijevoznika" class="form-control" required />
+                        <span asp-validation-for="EmailPrijevoznika" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Update</button>  <a class="btn btn-danger" asp-action="Home">Nazad</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

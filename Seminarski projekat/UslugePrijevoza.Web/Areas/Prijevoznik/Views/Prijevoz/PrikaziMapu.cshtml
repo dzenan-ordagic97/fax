@@ -1,0 +1,23 @@
+﻿@model PrijevozMapaVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div id="floating-panel">
+    <b>Start: </b>
+    <select id="start">
+        <option value="@Model.PocetnaLokacija" >@Model.PocetnaLokacija</option>
+    </select>
+    <b>End: </b>
+    <select id="end">
+        <option value="@Model.KrajnjaLokacija" >@Model.KrajnjaLokacija</option>
+    </select>
+    <button id="start2" class="btn btn-primary" >
+        Prikazi rutu
+        <p hidden="hidden" value="@Model.PocetnaLokacija"></p>
+    </button>
+</div>
+<div id="map"></div>
+
+@*<div id="warnings-panel"></div>*@
+

@@ -1,0 +1,93 @@
+﻿@model VoziloDetaljnoVM
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="row justify-content-center">
+
+    <div class="col-md-6">
+        <div class="justify-content-center">
+            <div class="col-md-12">
+                <h4 class="card-title mt-0" style="color:#4e73df;font-weight:bold;">  Detaljno o vozilu </h4>
+            </div>
+            <hr />
+            <div style="padding-left:20%">
+                <img style="width:75%; padding:10px; border-radius:10%;" alt="No photo!" src="@Model.Slika.URL" />
+            </div>
+            <br />
+            <form>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="ModelVozila" class="primary">Model vozila</label>
+                    <input asp-for="ModelVozila" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="TipVozila" class="primary">Tip vozila</label>
+                    <input asp-for="TipVozila" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="GodinaProizvodnje" class="primary">Godina proizvodnje</label>
+                    <input asp-for="GodinaProizvodnje" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="RegistracijskaOznaka" class="primary">Registracija</label>
+                    <input asp-for="RegistracijskaOznaka" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="BrojMjesta" class="primary">Ukupno slobodnih sjedista</label>
+                    <input asp-for="BrojMjesta" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="Zapremina" class="primary">Zapremina prtljaznika (u m/metrima)</label>
+                    <input asp-for="Zapremina" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02" ></i>
+                    <label asp-for="MaxVisina" class="primary">Maksimalna visina (u m/metrima)</label>
+                    <input asp-for="MaxVisina" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="MaxSirina" class="primary">Maksimalna sirina (u m/metrima)</label>
+                    <input asp-for="MaxSirina" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="MaxDuzina" class="primary">Maksimalna duzina (u m/metrima)</label>
+                    <input asp-for="MaxDuzina" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="MaxTezina" class="primary">Maksimalna tezina (u kg)</label>
+                    <input asp-for="MaxTezina" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="Cijena_km" class="primary">Cijena u KM</label>
+                    <input asp-for="Cijena_km" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="Br_EU_Paleta" class="primary">Broj EU paleta</label>
+                    <input asp-for="Br_EU_Paleta" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <div class="form-group">
+                    <i class="ni ni-single-02"></i>
+                    <label asp-for="Opis" class="primary"></label>
+                    <input asp-for="Opis" class="form-control" disabled style="text-align:center;" />
+                </div>
+                <a asp-controller="Vozilo" asp-area="Prijevoznik" asp-action="Detalji" asp-route-id="@Model.VoziloID" class="btn btn-danger" style="width:100%;">Nazad</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

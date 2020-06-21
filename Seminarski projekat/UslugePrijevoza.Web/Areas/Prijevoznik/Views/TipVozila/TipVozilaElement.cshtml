@@ -1,0 +1,8 @@
+﻿@model TipVozilaVM
+    <tr id="@Model.TipVozilaForSave.TipVozilaID">
+        <td width="95%">@Model.TipVozilaForSave.Naziv</td>
+        <td width="5%">
+
+            <button onclick="obrisi(@Model.TipVozilaForSave.TipVozilaID)" class="btn btn-outline-danger align-middle w-100 " style="color:white;margin-top:5px"> <i class="fas fa-trash fa-sm text-black-50"></i></button>
+        </td>
+    </tr>
